@@ -1,8 +1,6 @@
 import React from 'react';
-
 import './App.css';
 import Header from './Header';
-
 import images from './data.js';
 import ImageList from './ImageList';
 
@@ -20,11 +18,6 @@ const keywords = [
 
  ];
 
-
-
-
-
-
 class App extends React.Component {
   state = {
     keyword: null
@@ -40,43 +33,23 @@ handleDropdown = (e) =>{
 render() {
 
 const filterImages = images.filter(image => image.keyword=== this.state.keyword);
-
-
-
-
-
-
-
-
-
-
-
-  return (
+return (
 
   
     <div className="App">
      <Header />
-     <select onChange={this.handleDropdown}>
-                    {
-                        keywords.map(keyword => <option key={keyword} value={keyword}>{keyword}</option>)
-                    }
+        <select onChange={this.handleDropdown}>
+            {
+                keywords.map(keyword => <option key={keyword} value={keyword}>{keyword}</option>)
+            }
              
-                </select>
+        </select>
              
-
-     <ImageList  images={filterImages}/> 
+      <ImageList  images={filterImages}/> 
      </div>
   );
 }
 
 }
-
-
-
-
-
-
-
-
 
 export default App;

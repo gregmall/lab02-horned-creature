@@ -4,7 +4,7 @@ export default class ImageItem extends Component {
     render() {
         return (
             <div>
-                <img alt="horned creature" key={this.props.image.title} src={this.props.image.url}/>
+                <img alt={this.props.image.url} src={this.props.image.url.includes('modernfarmer') ? 'https://www.placecage.com/c/200/300/' : this.props.image.url} />
             </div>
         )
     }

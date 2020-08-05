@@ -1,19 +1,7 @@
 import React, { Component } from 'react'
 import ImageItem from  './ImageItem'
 import './App.css';
-// const keywords = [
-//     'narwhal',
-//     'rhino',
-//     'unicorn',
-//     'unicorn',
-//     'markhor',
-//     'addax',
-//     'mouflon',
-//     'chameleon',
-//     'lizard',
-//     'dragon'
 
-//    ];
 
 export default class ImageList extends Component {
 
