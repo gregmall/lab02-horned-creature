@@ -4,7 +4,7 @@ export default class ImageItem extends Component {
     render() {
         return (
             <div>
-                <img alt="random" key={this.props.image.title} src={this.props.image.url}/>
+                <img alt="horned creature" key={this.props.image.title} src={this.props.image.url}/>
             </div>
         )
     }
