@@ -6,6 +6,40 @@ import Header from './Header';
 import images from './data.js';
 import ImageList from './ImageList';
 
+const keywords = [
+  'narwhal',
+  'rhino',
+  'unicorn',
+  'unicorn',
+  'markhor',
+  'addax',
+  'mouflon',
+  'chameleon',
+  'lizard',
+  'dragon'
+
+ ];
+
+
+
+
+
+
+class App extends React.Component {
+  state = {
+    keyword: null
+  }
+
+
+handleDropdown = (e) =>{
+
+    const keyword = e.target.value;
+    this.setState({keyword})
+}
+
+render() {
+
+const filterImages = images.filter(image => image.keyword=== this.state.keyword);
 
 
 
@@ -13,13 +47,36 @@ import ImageList from './ImageList';
 
 
 
-function App() {
-return (
+
+
+
+
+  return (
+
+  
     <div className="App">
      <Header />
-     <ImageList  images={images}/>
+     <select onChange={this.handleDropdown}>
+                    {
+                        keywords.map(keyword => <option key={keyword} value={keyword}>{keyword}</option>)
+                    }
+             
+                </select>
+             
+
+     <ImageList  images={filterImages}/> 
      </div>
   );
 }
+
+}
+
+
+
+
+
+
+
+
 
 export default App;
